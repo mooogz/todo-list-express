@@ -1,47 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <!-- HTML template -->
+<html lang="en"> <!-- Signifies language (English)-->
+<head> <!-- Opening head tag -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Todo List: </h1>
-    <ul class="todoItems">
-    <% for(let i=0; i < items.length; i++) {%>
-        <li class="item">
-            <% if(items[i].completed === true) {%>
-                <span class='completed'><%= items[i].thing %></span>
-            <% }else{ %>
-                <span><%= items[i].thing %></span>
-            <% } %>    
-            <span class='fa fa-trash'></span>
-        </li>
-    <% } %>
-    </ul>
+<body> <!-- main section for displayed content -->
+    <!DOCTYPE html> <!-- extra head? -->
+<html lang="en"> <!-- extra head? -->
+<head> <!-- extra head? -->
+    <meta charset="UTF-8"> <!-- extra head? -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- extra head? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- extra head? -->
+    <title>Document</title> <!-- extra head? -->
+</head> <!-- extra head? -->
+<body> <!-- main section for displayed content -->
+    <h1>Todo List: </h1> <!-- main heading on page -->
+    <ul class="todoItems"> <!-- unordered list with class of to-do items -->
+    <% for(let i=0; i < items.length; i++) {%> <!-- EJS - starts a for loop-->
+        <li class="item"> <!-- list item with a class of item-->
+            <% if(items[i].completed === true) {%> <!-- EJS conditional to check if an element of an array has the class completed -->
+                <span class='completed'><%= items[i].thing %></span> <!-- create inline element with the 'completed' class that holds EJS to show name of task -->
+            <% }else{ %> <!-- else part of conditional to move on to next case if the element does not have the class of completed-->
+                <span><%= items[i].thing %></span> <!-- EJS to display the task name that doesn't have a class in a span-->
+            <% } %>    <!-- closes the else statement (EJS) -->
+            <span class='fa fa-trash'></span> <!-- trash can icon in a span -->
+        </li> <!-- closes list item -->
+    <% } %> <!-- EJS - closes for loop-->
+    </ul> <!-- ends unordered list -->
 
-    <h2>Left to do: <%= left %></h2>
+    <h2>Left to do: <%= left %></h2> <!-- second level heading to display on page with EJS to show variable for how many tasks are left in list -->
 
-    <h2>Add A Todo:</h2>
+    <h2>Add A Todo:</h2> <!-- second level heading to direct user to add a list item to the to-do list -->
 
-    <form action="/addTodo" method="POST">
-        <input type="text" placeholder="Thing To Do" name="todoItem">
-        <input type="submit">
-    </form>
+    <form action="/addTodo" method="POST"> <!-- creates form with a POST method and path /addTodo-->
+        <input type="text" placeholder="Thing To Do" name="todoItem"> <!-- creates text input with placeholder and name for the user to input a new task -->
+        <input type="submit"> <!-- creates submit button for input -->
+    </form> <!-- closes the add to-do item form -->
     
 
-    <script src='js/main.js'></script>
-</body>
-</html>
+    <script src='js/main.js'></script> <!-- connects javascript to file -->
+</body> <!-- closes body -->
+</html> <!-- closes HTML -->

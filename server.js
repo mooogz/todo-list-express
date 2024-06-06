@@ -1,7 +1,12 @@
+// stores required express module in express variable
 const express = require('express')
+// creates app variable 
 const app = express()
+// stores required mongodb module in MongoClient variable
 const MongoClient = require('mongodb').MongoClient
+// stores port number in PORT variable to use throughout code
 const PORT = 2121
+// requires and configures the .env package
 require('dotenv').config()
 
 
